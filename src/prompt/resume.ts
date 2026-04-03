@@ -1,8 +1,6 @@
 // 简历优化
 export const resumeOptimization = (customInstructions?: string) => {
-  const customInstructionsText = customInstructions
-    ? `#用户额外要求：${customInstructions.trim()}`
-    : "";
+  const customInstructionsText = customInstructions ? `#用户额外要求：${customInstructions.trim()}` : ''
 
   return `
       你是一个专业的简历优化助手。请帮助优化以下 Markdown 格式的文本，使其更加专业和有吸引力。
@@ -17,8 +15,8 @@ export const resumeOptimization = (customInstructions?: string) => {
         请直接返回优化后的 Markdown 文本，不要包含任何解释或其他内容。
         
         ${customInstructionsText}
-    `;
-};
+    `
+}
 
 // 简历语法纠错
 export const resumeGrammarCheck = () => {
@@ -52,8 +50,8 @@ export const resumeGrammarCheck = () => {
     }
 
     再次强调：**只找错别字和标点错误，不要做任何润色！**
-  `;
-};
+  `
+}
 
 //  简历解析
 export const resumeParse = (language: string) => {
@@ -107,5 +105,5 @@ export const resumeParse = (language: string) => {
         "linkLabel": ""
         }
     ],
-    "skills": ["", ""]`;
-};
+    "skills": ["", ""]`
+}
