@@ -10,7 +10,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { Input } from "@/components/ui/input";
-import { useForwardedRef } from "../../lib/use-forwarded-ref";
+import { useForwardedRef } from "@/hooks/use-forwarded-ref";
 
 interface ColorPickerProps
   extends Omit<ButtonProps, "value" | "onChange" | "onBlur"> {
