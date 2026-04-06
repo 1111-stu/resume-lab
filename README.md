@@ -1,28 +1,30 @@
 <div align="center">
 
-# ✨ ResumeLab ✨
+# ResumeLab
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 ![TanStack Start](https://img.shields.io/badge/TanStack_Start-latest-black)
-![Framer Motion](https://img.shields.io/badge/Framer_Motion-10.0-purple)
+![Hono](https://img.shields.io/badge/Hono-API-orange)
+![pnpm workspace](https://img.shields.io/badge/pnpm-workspace-F69220)
 
 [简体中文](./README.zh-CN.md) | English
 
 </div>
 
-ResumeLab is a fork of [Magic Resume](https://github.com/JOYCEQL/magic-resume), a modern online resume editor that makes creating professional resumes simple and enjoyable. Built with TanStack Start and Framer Motion, it supports real-time preview and custom themes.
+ResumeLab is a modern resume builder focused on speed, clarity, and a polished editing experience. It helps you write, refine, preview, and export professional resumes with less friction.
+
+This project is forked from [Magic Resume](https://github.com/JOYCEQL/magic-resume) and is now organized as a frontend/backend separated monorepo, with a standalone Hono API backend for AI-powered capabilities.
 
 ## Fork Notice
 
 This project is forked from [Magic Resume](https://github.com/JOYCEQL/magic-resume).
 The original project's license and additional commercial restrictions in [LICENSE](LICENSE) continue to apply to the upstream codebase.
 
-## 📸 Screenshots
+## Screenshots
 
-<img width="1920" height="1440" alt="336_1x_shots_so" src="https://github.com/user-attachments/assets/18969a17-06f8-4a4b-94eb-284ba8442620" />
+<img width="1920" height="1440" alt="ResumeLab Screenshot" src="https://github.com/user-attachments/assets/18969a17-06f8-4a4b-94eb-284ba8442620" />
 
-
-## ✨ Features
+## Features
 
 - 🚀 Built with TanStack Start
 - 💫 Smooth animations (Framer Motion)
@@ -34,18 +36,25 @@ The original project's license and additional commercial restrictions in [LICENS
 - 💾 Auto-save
 - 🔒 Local storage
 
-## 🛠️ Tech Stack
+## Tech Stack
 
-- TanStack Start
-- TypeScript
-- Motion
-- Tiptap
-- Tailwind CSS
-- Zustand
-- Shadcn/ui
-- Lucide Icons
+- `apps/web`: TanStack Start, Vite, React, TypeScript, Tailwind CSS, Zustand, TipTap
+- `apps/backend`: Hono, Node.js, TypeScript
+- Workspace: pnpm
 
-## 🚀 Quick Start
+## Project Structure
+
+```text
+.
+├── apps
+│   ├── web        # frontend app
+│   └── backend    # Hono API service
+├── docker-compose.yml
+├── package.json
+└── pnpm-workspace.yaml
+```
+
+## Quick Start
 
 1. Clone the project
 
@@ -60,88 +69,150 @@ cd resume-lab
 pnpm install
 ```
 
-3. Start development server
+3. Prepare env files
+
+```bash
+cp apps/web/.env.example apps/web/.env
+cp apps/backend/.env.example apps/backend/.env
+```
+
+4. Start both apps
 
 ```bash
 pnpm dev
 ```
 
-4. Open browser and visit `http://localhost:5137`
+5. Open:
 
-## Local Split Dev
+- Frontend: `http://localhost:5137`
+- Backend: `http://localhost:3000`
 
-To run the frontend against the extracted Hono backend:
+## Development Commands
 
-1. Create a local env file from `apps/web/.env.example` and set:
+Run both apps:
 
 ```bash
-VITE_API_BASE_URL=http://localhost:3000
+pnpm dev
 ```
 
-2. Start the backend:
+Run frontend only:
+
+```bash
+pnpm dev:web
+```
+
+Run backend only:
 
 ```bash
 pnpm dev:backend
 ```
 
-3. Start the frontend in another terminal:
+Build frontend:
 
 ```bash
-pnpm dev
+pnpm build:web
 ```
 
-Current migration demo:
+Build backend:
 
-- Grammar check is the first frontend feature wired to the standalone backend.
-- Frontend request target: `/v1/resume/grammar`
-- Backend service default address: `http://localhost:3000`
+```bash
+pnpm build:backend
+```
 
-## 📦 Build and Deploy
+Compatibility command:
 
 ```bash
 pnpm build
 ```
 
+This currently builds the frontend only.
 
-## 🐳 Docker Deployment
+## Environment Variables
 
-### Docker Compose
+Frontend `apps/web/.env.example`:
 
-1. Ensure you have Docker and Docker Compose installed
+```bash
+VITE_API_BASE_URL=http://localhost:3000
+FONTCONFIG_PATH=/var/task/fonts
+```
 
-2. Run the following command in the project root directory:
+Backend `apps/backend/.env.example`:
+
+```bash
+PORT=3000
+CORS_ORIGIN=http://localhost:5137
+```
+
+Notes:
+
+- The frontend reads `VITE_API_BASE_URL` at runtime to call the standalone backend.
+- AI provider credentials are currently configured in the frontend settings and sent to backend API routes when needed.
+
+## API Overview
+
+Current backend routes include:
+
+- `GET /health`
+- `POST /v1/resume/grammar`
+- `POST /v1/resume/polish`
+- `POST /v1/resume/import`
+- `GET /v1/media/image-proxy`
+
+The grammar check flow is the first fully migrated frontend-to-backend example in this architecture.
+
+## Project Direction
+
+ResumeLab will continue to be maintained as an open-source project.
+The next stage will focus on improving the resume editing experience and expanding AI-assisted features, including interview question prediction, resume expansion, and self-introduction generation.
+
+## Deployment
+
+This project is designed for separated deployment:
+
+- `apps/web` can be deployed as the frontend service
+- `apps/backend` can be deployed as the API service
+
+Each app has its own Dockerfile:
+
+- `apps/web/Dockerfile`
+- `apps/backend/Dockerfile`
+
+For local or simple self-hosting, you can also use Docker Compose:
 
 ```bash
 docker compose up -d
 ```
 
-This will:
+Default ports:
 
-- Automatically build the application image
-- Start the container in the background
+- Web: `5137`
+- Backend: `3000`
 
-
-## 📝 License and Commercial Use
+## License and Commercial Use
 
 The source code of this project is open-sourced under the **Apache 2.0** license, but with **strict commercial use restrictions**:
 
-- **Free for Personal Use**: Free to use purely for personal, non-commercial purposes (e.g., personal learning, creating your own resume).
-- **Commercial License Required**: Unauthorized commercial use is strictly prohibited. Any organization or individual that provides it as a service (SaaS/PaaS, etc.) to the public for profit, uses it for enterprise commercial operations, or conducts secondary commercial development, **must obtain a commercial license, regardless of whether the source code has been modified**.
+- **Free for Personal Use**: Free to use purely for personal, non-commercial purposes.
+- **Commercial License Required**: Unauthorized commercial use is prohibited. If you provide it as a service, use it in commercial operations, or perform secondary commercial development, you must obtain commercial authorization.
 
-Please see the [LICENSE](LICENSE) file for detailed terms.
+Please read [LICENSE](LICENSE) for the detailed terms.
 
-## 🗺️ Roadmap
+## Roadmap
 
 - [x] AI-assisted writing
 - [x] Multi-language support
-- [ ] Support for more resume templates
-- [ ] Support for more export formats
-- [ ] Import PDF, Markdown, etc.
-- [x] Custom model
+- [x] Custom model configuration
 - [x] Auto one page
+- [ ] Resume diagnosis
+- [ ] Interview question prediction
+- [ ] Resume expansion
+- [ ] Self-introduction generation
+- [ ] More resume templates
+- [ ] More export formats
+- [ ] Import PDF / Markdown / more formats
 - [ ] Online resume hosting
 
-## 📈 Star History
+## Star History
 
 <a href="https://star-history.com/#1111-stu/resume-lab&Date">
  <picture>
@@ -151,6 +222,6 @@ Please see the [LICENSE](LICENSE) file for detailed terms.
  </picture>
 </a>
 
-## 🌟 Support
+## Support
 
-If you find this project helpful, please give it a star ⭐️
+If ResumeLab helps you, a star is always appreciated.

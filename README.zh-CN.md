@@ -1,50 +1,60 @@
 <div align="center">
 
-# ✨ ResumeLab ✨
+# ResumeLab
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 ![TanStack Start](https://img.shields.io/badge/TanStack_Start-latest-black)
-![Framer Motion](https://img.shields.io/badge/Framer_Motion-10.0-purple)
+![Hono](https://img.shields.io/badge/Hono-API-orange)
+![pnpm workspace](https://img.shields.io/badge/pnpm-workspace-F69220)
 
 简体中文 | [English](./README.md)
 
 </div>
 
-ResumeLab 是基于 [Magic Resume](https://github.com/JOYCEQL/magic-resume) fork 的现代化在线简历编辑器，让创建专业简历变得简单有趣。基于 TanStack Start 和 Motion 构建，支持实时预览和自定义主题。
+ResumeLab 是一个强调效率、清晰表达与编辑体验的现代化简历工具，帮助你更轻松地完成简历撰写、润色、预览与导出。
+
+本项目基于 [Magic Resume](https://github.com/JOYCEQL/magic-resume) fork。当前仓库已经重构为前后端分离的 monorepo，并引入独立的 Hono API 后端来承载 AI 相关能力。
 
 ## Fork 说明
 
 本项目 fork 自 [Magic Resume](https://github.com/JOYCEQL/magic-resume)。
 原项目的许可证以及 [LICENSE](LICENSE) 中的附加商业限制，仍适用于上游代码部分。
 
-## 📸 项目截图
+## 项目截图
 
-<img width="1920" height="1440" alt="85_1x_shots_so" src="https://github.com/user-attachments/assets/4667e49a-7bf2-4379-9390-725e42799dc7" />
+<img width="1920" height="1440" alt="ResumeLab Screenshot" src="https://github.com/user-attachments/assets/4667e49a-7bf2-4379-9390-725e42799dc7" />
 
-
-## ✨ 特性
+## 特性
 
 - 🚀 基于 TanStack Start 构建
-- 💫 流畅的动画效果 (Motion)
+- 💫 流畅的动画效果 (Framer Motion)
 - 🎨 自定义主题支持
+- 📱 响应式设计
 - 🌙 深色模式
 - 📤 导出为 PDF
 - 🔄 实时预览
 - 💾 自动保存
-- 🔒 硬盘级存储
+- 🔒 本地存储
 
-## 🛠️ 技术栈
+## 技术栈
 
-- TanStack Start
-- TypeScript
-- Motion
-- Tiptap
-- Tailwind CSS
-- Zustand
-- Shadcn/ui
-- Lucide Icons
+- `apps/web`：TanStack Start、Vite、React、TypeScript、Tailwind CSS、Zustand、TipTap
+- `apps/backend`：Hono、Node.js、TypeScript
+- 工作区管理：pnpm
 
-## 🚀 快速开始
+## 项目结构
+
+```text
+.
+├── apps
+│   ├── web        # 前端应用
+│   └── backend    # Hono API 服务
+├── docker-compose.yml
+├── package.json
+└── pnpm-workspace.yaml
+```
+
+## 快速开始
 
 1. 克隆项目
 
@@ -59,88 +69,150 @@ cd resume-lab
 pnpm install
 ```
 
-3. 启动开发服务器
+3. 准备环境变量文件
+
+```bash
+cp apps/web/.env.example apps/web/.env
+cp apps/backend/.env.example apps/backend/.env
+```
+
+4. 同时启动前后端
 
 ```bash
 pnpm dev
 ```
 
-4. 打开浏览器访问 `http://localhost:5137`
+5. 访问地址
 
-## 本地前后端分离开发
+- 前端：`http://localhost:5137`
+- 后端：`http://localhost:3000`
 
-如果你想让前端对接已经拆出的 Hono 后端：
+## 开发命令
 
-1. 基于 `apps/web/.env.example` 创建本地环境文件，并设置：
+同时启动前后端：
 
 ```bash
-VITE_API_BASE_URL=http://localhost:3000
+pnpm dev
 ```
 
-2. 启动后端：
+只启动前端：
+
+```bash
+pnpm dev:web
+```
+
+只启动后端：
 
 ```bash
 pnpm dev:backend
 ```
 
-3. 在另一个终端启动前端：
+构建前端：
 
 ```bash
-pnpm dev
+pnpm build:web
 ```
 
-当前迁移示范链路：
+构建后端：
 
-- 语法检查是第一个接入独立后端的前端功能
-- 前端请求地址：`/v1/resume/grammar`
-- 后端默认地址：`http://localhost:3000`
+```bash
+pnpm build:backend
+```
 
-## 📦 构建打包
+兼容命令：
 
 ```bash
 pnpm build
 ```
 
-## 🐳 Docker 部署
+当前这个命令只会构建前端。
 
-### Docker Compose
+## 环境变量
 
-1. 确保你已经安装了 Docker 和 Docker Compose
+前端 `apps/web/.env.example`：
 
-2. 在项目根目录运行：
+```bash
+VITE_API_BASE_URL=http://localhost:3000
+FONTCONFIG_PATH=/var/task/fonts
+```
+
+后端 `apps/backend/.env.example`：
+
+```bash
+PORT=3000
+CORS_ORIGIN=http://localhost:5137
+```
+
+说明：
+
+- 前端通过运行时配置 `VITE_API_BASE_URL` 调用独立后端。
+- AI 模型相关凭证目前由前端设置页配置，并在需要时透传给后端接口。
+
+## API 概览
+
+当前后端已包含这些核心接口：
+
+- `GET /health`
+- `POST /v1/resume/grammar`
+- `POST /v1/resume/polish`
+- `POST /v1/resume/import`
+- `GET /v1/media/image-proxy`
+
+其中语法检查链路，是当前这套前后端拆分架构下第一条完整跑通的示范能力。
+
+## 项目方向
+
+ResumeLab 会继续保持开源，并持续迭代。
+下一阶段会重点围绕简历编辑体验优化，以及更多 AI 能力扩展，例如面试题预测、简历扩写、自我介绍生成等。
+
+## 部署说明
+
+当前架构更推荐前后端分开部署：
+
+- `apps/web` 作为前端服务部署
+- `apps/backend` 作为 API 服务部署
+
+两个子应用都已经有各自独立的 Dockerfile：
+
+- `apps/web/Dockerfile`
+- `apps/backend/Dockerfile`
+
+如果是本地联调或简单自托管，也可以直接使用 Docker Compose：
 
 ```bash
 docker compose up -d
 ```
 
-这将会：
+默认端口：
 
-- 自动构建应用镜像
-- 在后台启动容器
+- Web：`5137`
+- Backend：`3000`
 
-
-
-## 📝 开源协议与商业授权
+## 开源协议与商业授权
 
 本项目源代码基于 **Apache 2.0** 协议开源，但附带**严格的商业使用限制**：
 
-- **个人免费**：仅限个人非商业目的（如个人学习交流、制作个人简历）免费使用。
-- **商用需授权**：严禁未经授权的商业化使用。任何组织或个人，若将其作为服务（SaaS/PaaS等）向公众提供以获取利益，或作为企业商业运营使用，或进行二次商业化开发，**无论是否修改源代码，均须获取商业授权**。
+- **个人免费**：仅限个人非商业目的免费使用。
+- **商用需授权**：若你将其作为服务对外提供、用于商业运营，或进行二次商业化开发，均需要获得商业授权。
 
-详情请查看 [LICENSE](LICENSE) 文件。
+详细条款请查看 [LICENSE](LICENSE)。
 
-## 🗺️ 路线图
+## 路线图
 
 - [x] AI 辅助编写
 - [x] 多语言支持
-- [ ] 支持更多简历模板
-- [ ] 更多格式导出
-- [x] 自定义模型
+- [x] 自定义模型配置
 - [x] 自动一页纸
-- [ ] 导入 PDF, Markdown 等
+- [ ] 简历诊断
+- [ ] 面试题预测
+- [ ] 简历扩写
+- [ ] 自我介绍生成
+- [ ] 更多简历模板
+- [ ] 更多导出格式
+- [ ] 导入 PDF / Markdown / 更多格式
 - [ ] 在线简历托管
 
-## 📈 Star History
+## Star History
 
 <a href="https://star-history.com/#1111-stu/resume-lab&Date">
  <picture>
@@ -150,6 +222,6 @@ docker compose up -d
  </picture>
 </a>
 
-## 🌟 支持项目
+## 支持项目
 
-<img src="https://github.com/JOYCEQL/picx-images-hosting/raw/master/pintu-fulicat.com-1741081632544.26lmg2uc2m.webp" width="320"  alt="图片描述">
+如果 ResumeLab 对你有帮助，欢迎点一个 Star。
