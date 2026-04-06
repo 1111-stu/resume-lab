@@ -1,8 +1,8 @@
 import { Hono } from "hono";
-import { AI_MODEL_CONFIGS } from "@resume-lab/shared/ai/config";
-import { resumeOptimization } from "@resume-lab/shared/prompts/resume";
+import { AI_MODEL_CONFIGS } from "@/services/ai/config.js";
+import { resumeOptimization } from "@/prompts/resume.js";
 
-export const sharedCheckRoute = new Hono().get("/shared-check", (c) => {
+export const sharedCheckRoute = new Hono().get("/shared-check", c => {
   const providers = Object.keys(AI_MODEL_CONFIGS);
   const prompt = resumeOptimization();
 

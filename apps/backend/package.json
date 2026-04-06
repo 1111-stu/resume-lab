@@ -3,14 +3,14 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "tsx watch src/index.ts",
-    "build": "tsc -p tsconfig.json",
+    "dev": "tsx watch --tsconfig tsconfig.json src/index.ts",
+    "clean": "node --input-type=module --eval \"import { rm } from 'node:fs/promises'; await rm('dist', { recursive: true, force: true });\"",
+    "build": "pnpm run clean && tsc -p tsconfig.json && pnpm exec tsc-alias -p tsconfig.json",
     "start": "node dist/index.js",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
-    "@resume-lab/shared": "workspace:*",
     "@hono/node-server": "^1.19.4",
     "dotenv": "^17.2.3",
     "hono": "^4.10.1",
@@ -18,6 +18,7 @@
   },
   "devDependencies": {
     "@types/node": "^20",
+    "tsc-alias": "^1.8.10",
     "tsx": "^4.21.0",
     "typescript": "^5.7.3"
   }

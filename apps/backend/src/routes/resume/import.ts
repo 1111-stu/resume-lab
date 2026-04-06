@@ -1,9 +1,6 @@
 import { Hono } from "hono";
-import { resumeParse } from "@resume-lab/shared/prompts/resume";
-import {
-  formatGeminiErrorMessage,
-  getGeminiModelInstance,
-} from "../../services/ai/gemini.js";
+import { formatGeminiErrorMessage, getGeminiModelInstance } from "@/services/ai/gemini.js";
+import { resumeParse } from "@/prompts/resume.js";
 
 interface ResumeImportRequestBody {
   apiKey?: string;
@@ -51,7 +48,7 @@ const extractBase64Payload = (value: string) => {
   };
 };
 
-export const importRoute = new Hono().post("/import", async (c) => {
+export const importRoute = new Hono().post("/import", async c => {
   try {
     const body = (await c.req.json()) as ResumeImportRequestBody;
     const { apiKey, model, content, images, locale } = body;
@@ -63,7 +60,7 @@ export const importRoute = new Hono().post("/import", async (c) => {
     const language = locale === "en" ? "English" : "Chinese";
     const geminiModel = model || "gemini-flash-latest";
     const imageParts = Array.isArray(images)
-      ? images.map((image) => {
+      ? images.map(image => {
           const payload = extractBase64Payload(image);
           return {
             inlineData: {

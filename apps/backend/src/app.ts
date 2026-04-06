@@ -1,11 +1,11 @@
 import { Hono } from "hono";
 import { cors } from "hono/cors";
-import { healthRoute } from "./routes/health.js";
-import { imageProxyRoute } from "./routes/media/image-proxy.js";
-import { grammarRoute } from "./routes/resume/grammar.js";
-import { importRoute } from "./routes/resume/import.js";
-import { polishRoute } from "./routes/resume/polish.js";
-import { sharedCheckRoute } from "./routes/shared-check.js";
+import { healthRoute } from "@/routes/health.js";
+import { imageProxyRoute } from "@/routes/media/image-proxy.js";
+import { grammarRoute } from "@/routes/resume/grammar.js";
+import { importRoute } from "@/routes/resume/import.js";
+import { polishRoute } from "@/routes/resume/polish.js";
+import { sharedCheckRoute } from "@/routes/shared-check.js";
 
 export const app = new Hono();
 

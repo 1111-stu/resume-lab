@@ -1,10 +1,7 @@
 import { Hono } from "hono";
-import { AI_MODEL_CONFIGS, type AIModelType } from "@resume-lab/shared/ai/config";
-import { resumeOptimization } from "@resume-lab/shared/prompts/resume";
-import {
-  formatGeminiErrorMessage,
-  getGeminiModelInstance,
-} from "../../services/ai/gemini.js";
+import { AI_MODEL_CONFIGS, type AIModelType } from "@/services/ai/config.js";
+import { formatGeminiErrorMessage, getGeminiModelInstance } from "@/services/ai/gemini.js";
+import { resumeOptimization } from "@/prompts/resume.js";
 
 interface PolishRequestBody {
   apiKey?: string;
@@ -21,7 +18,7 @@ const STREAM_HEADERS = {
   Connection: "keep-alive",
 } as const;
 
-export const polishRoute = new Hono().post("/polish", async (c) => {
+export const polishRoute = new Hono().post("/polish", async c => {
   try {
     const body = (await c.req.json()) as PolishRequestBody;
     const { apiKey, model, content, modelType, apiEndpoint, customInstructions } = body;
@@ -31,7 +28,7 @@ export const polishRoute = new Hono().post("/polish", async (c) => {
         {
           error: "Missing required fields: apiKey, content, modelType",
         },
-        400
+        400,
       );
     }
 
@@ -116,7 +113,7 @@ export const polishRoute = new Hono().post("/polish", async (c) => {
             }
 
             const chunk = decoder.decode(value);
-            const lines = chunk.split("\n").filter((line) => line.trim() !== "");
+            const lines = chunk.split("\n").filter(line => line.trim() !== "");
 
             for (const line of lines) {
               if (line.includes("[DONE]")) continue;

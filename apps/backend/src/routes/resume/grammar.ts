@@ -1,10 +1,7 @@
 import { Hono } from "hono";
-import { AI_MODEL_CONFIGS, type AIModelType } from "@resume-lab/shared/ai/config";
-import { resumeGrammarCheck } from "@resume-lab/shared/prompts/resume";
-import {
-  formatGeminiErrorMessage,
-  getGeminiModelInstance,
-} from "../../services/ai/gemini.js";
+import { AI_MODEL_CONFIGS, type AIModelType } from "@/services/ai/config.js";
+import { formatGeminiErrorMessage, getGeminiModelInstance } from "@/services/ai/gemini.js";
+import { resumeGrammarCheck } from "@/prompts/resume.js";
 
 interface GrammarRequestBody {
   apiKey?: string;
@@ -14,7 +11,7 @@ interface GrammarRequestBody {
   apiEndpoint?: string;
 }
 
-export const grammarRoute = new Hono().post("/grammar", async (c) => {
+export const grammarRoute = new Hono().post("/grammar", async c => {
   try {
     const body = (await c.req.json()) as GrammarRequestBody;
     const { apiKey, model, content, modelType, apiEndpoint } = body;
@@ -24,7 +21,7 @@ export const grammarRoute = new Hono().post("/grammar", async (c) => {
         {
           error: "Missing required fields: apiKey, content, modelType",
         },
-        400
+        400,
       );
     }
 
