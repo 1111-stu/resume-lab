@@ -5,13 +5,13 @@ import {
   Scripts,
   useLocation
 } from "@tanstack/react-router";
-import appCss from "../app/globals.css?url";
-import appFontCss from "../app/font.css?url";
+import appCss from "../styles/globals.css?url";
+import appFontCss from "../styles/font.css?url";
 import { NextIntlClientProvider } from "@/i18n/compat/client";
 import { useEffect } from "react";
 import zhMessages from "@/i18n/locales/zh.json";
 import enMessages from "@/i18n/locales/en.json";
-import { Providers } from "@/app/providers";
+import { Providers } from "@/providers/app-providers";
 import { Toaster } from "@/components/ui/sonner";
 import { getPreferredLocale } from "@/i18n/runtime";
 import { getPublicRuntimeConfigScript } from "@/lib/runtime-config";
