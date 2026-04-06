@@ -19,7 +19,7 @@ import {
     AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import ResumeTemplateComponent from "@/components/templates";
-import { DEFAULT_TEMPLATES } from "@/config";
+import { DEFAULT_TEMPLATES } from "@/components/templates/registry";
 import { cn } from "@/utils/cn";
 import { normalizeFontFamily } from "@/utils/fonts";
 
