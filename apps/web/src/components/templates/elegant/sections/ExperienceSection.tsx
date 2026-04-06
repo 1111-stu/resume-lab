@@ -4,7 +4,7 @@ import { Experience, GlobalSettings } from "@/types/resume";
 import SectionTitle from "./SectionTitle";
 import SectionWrapper from "../../shared/SectionWrapper";
 import { normalizeRichTextContent } from "@/lib/richText";
-import { formatDateString } from "@/lib/utils";
+import { formatDateString } from "@/utils/date";
 import { useLocale } from "@/i18n/compat/client";
 
 interface ExperienceSectionProps {

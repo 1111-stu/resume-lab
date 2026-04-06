@@ -3,7 +3,8 @@ import SectionTitle from "./SectionTitle";
 import SectionWrapper from "../../shared/SectionWrapper";
 import { GlobalSettings, CustomItem } from "@/types/resume";
 import { normalizeRichTextContent } from "@/lib/richText";
-import { formatDateString, cn } from "@/lib/utils";
+import { cn } from "@/utils/cn";
+import { formatDateString } from "@/utils/date";
 import { useLocale } from "@/i18n/compat/client";
 
 interface CustomSectionProps {

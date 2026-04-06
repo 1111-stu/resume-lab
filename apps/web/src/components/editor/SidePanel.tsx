@@ -17,7 +17,7 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import LayoutSetting from "./layout/LayoutSetting";
 import { useResumeStore } from "@/store/useResumeStore";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/cn";
 import { THEME_COLORS, MenuSection } from "@/types/resume";
 import { ColorPicker } from "@/components/ui/color-picker";
 import {

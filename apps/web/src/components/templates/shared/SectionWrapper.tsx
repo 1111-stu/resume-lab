@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useResumeStore } from "@/store/useResumeStore";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/cn";
 
 interface SectionWrapperProps {
     sectionId: string;

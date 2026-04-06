@@ -2,7 +2,7 @@ import React from "react";
 import { Pencil } from "lucide-react";
 import { motion } from "framer-motion";
 import { useResumeStore } from "@/store/useResumeStore";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/cn";
 import BasicPanel from "./basic/BasicPanel";
 import EducationPanel from "./education/EducationPanel";
 import ProjectPanel from "./project/ProjectPanel";

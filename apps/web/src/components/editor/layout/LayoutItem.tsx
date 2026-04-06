@@ -1,7 +1,7 @@
 
 import { motion, Reorder, useDragControls } from "framer-motion";
 import { Eye, EyeOff, GripVertical, Trash2 } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/cn";
 import { MenuSection } from "@/types/resume";
 import { useTranslations } from "@/i18n/compat/client";
 import {

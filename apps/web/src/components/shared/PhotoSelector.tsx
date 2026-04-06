@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Settings2, Image, EyeOff, Eye } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/cn";
 import PhotoConfigDrawer from "./PhotoConfigDrawer";
 import { useResumeStore } from "@/store/useResumeStore";
 import { BasicInfo, PhotoConfig } from "@/types/resume";

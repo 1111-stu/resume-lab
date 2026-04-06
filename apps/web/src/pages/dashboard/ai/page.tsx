@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import DeepSeekLogo from "@/components/ai/icon/IconDeepseek";
 import IconDoubao from "@/components/ai/icon/IconDoubao";
 import { useAIConfigStore } from "@/store/useAIConfigStore";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/cn";
 import IconOpenAi from "@/components/ai/icon/IconOpenAi";
 
 const AISettingsPage = () => {

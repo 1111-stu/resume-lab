@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Star } from "lucide-react";
 import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/cn";
 
 const REPO_URL = "https://github.com/1111-stu/resume-lab";
 const API_URL = "https://api.github.com/repos/1111-stu/resume-lab";

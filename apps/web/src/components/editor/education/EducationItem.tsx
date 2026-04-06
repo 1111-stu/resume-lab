@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/cn";
 import { useResumeStore } from "@/store/useResumeStore";
 import { Education } from "@/types/resume";
 import {

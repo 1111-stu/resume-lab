@@ -1,5 +1,5 @@
 import { useResumeStore } from "@/store/useResumeStore";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/cn";
 import Field from "../Field";
 
 const SelfEvaluationPanel = () => {

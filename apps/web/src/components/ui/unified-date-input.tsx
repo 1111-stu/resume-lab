@@ -3,7 +3,7 @@ import { DateInput } from "@heroui/date-input";
 import { HeroUIProvider } from "@heroui/react";
 import { CalendarDate, parseDate } from "@internationalized/date";
 import { useState, useEffect } from "react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/cn";
 
 interface UnifiedDateInputProps {
   value: string;

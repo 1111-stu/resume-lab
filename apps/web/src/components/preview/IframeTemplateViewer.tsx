@@ -2,7 +2,7 @@
 import React, { useMemo } from "react";
 import { useParams } from "@tanstack/react-router";
 import ResumeTemplateComponent from "../templates";
-import { cn } from "../../lib/utils";
+import { cn } from "@/utils/cn";
 import { normalizeFontFamily } from "@/utils/fonts";
 import {
   TEMPLATE_PREVIEW_HEIGHT_PX,

@@ -3,7 +3,7 @@ import React, { useEffect, useMemo, useState, useRef } from "react";
 import throttle from "lodash/throttle";
 import { toast } from "sonner";
 import { DEFAULT_TEMPLATES } from "@/config";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/cn";
 import { useResumeStore } from "@/store/useResumeStore";
 import { useAutoOnePage } from "@/hooks/useAutoOnePage";
 import { useTranslations } from "@/i18n/compat/client";

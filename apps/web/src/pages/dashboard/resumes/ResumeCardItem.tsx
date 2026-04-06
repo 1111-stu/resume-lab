@@ -20,7 +20,7 @@ import {
 } from "@/components/ui/alert-dialog";
 import ResumeTemplateComponent from "@/components/templates";
 import { DEFAULT_TEMPLATES } from "@/config";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/cn";
 import { normalizeFontFamily } from "@/utils/fonts";
 
 interface ResumeCardItemProps {

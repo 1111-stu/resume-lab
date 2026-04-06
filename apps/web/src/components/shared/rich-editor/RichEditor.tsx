@@ -34,7 +34,7 @@ import {
   Unlink,
 } from "lucide-react";
 import Highlight from "@tiptap/extension-highlight";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/cn";
 import {
   hasMeaningfulRichTextContent,
   normalizeLinkHref,

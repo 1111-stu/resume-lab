@@ -1,7 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import * as Icons from "lucide-react";
-import { cn, formatDateString } from "@/lib/utils";
+import { cn } from "@/utils/cn";
+import { formatDateString } from "@/utils/date";
 import { BasicInfo, getBorderRadiusValue, GlobalSettings } from "@/types/resume";
 import { ResumeTemplate } from "@/types/template";
 import SectionWrapper from "../../shared/SectionWrapper";

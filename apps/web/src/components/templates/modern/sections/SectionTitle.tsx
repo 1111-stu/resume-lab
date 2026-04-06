@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import { GlobalSettings } from "@/types/resume";
 import { useTemplateContext } from "../../TemplateContext";
 import { useResumeStore } from "@/store/useResumeStore";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/cn";
 
 interface SectionTitleProps {
     globalSettings?: GlobalSettings;

@@ -2,7 +2,7 @@ import React from "react";
 import { useTranslations } from "@/i18n/compat/client";
 import { Braces, Loader2 } from "lucide-react";
 import { PdfIcon } from "@/components/shared/icons/PdfIcon";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/cn";
 import {
   Dialog,
   DialogContent,

@@ -35,7 +35,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import TemplateSheet from "@/components/shared/TemplateSheet";
 import { GITHUB_REPO_URL, PDF_EXPORT_CONFIG } from "@/config";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/cn";
 import { useGrammarCheck } from "@/hooks/useGrammarCheck";
 import { useAIConfigStore } from "@/store/useAIConfigStore";
 import { AI_MODEL_CONFIGS } from "@/config/ai";

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import * as Icons from "lucide-react";
 import { BasicInfo, GlobalSettings, getBorderRadiusValue } from "@/types/resume";
 import SectionWrapper from "../../shared/SectionWrapper";
-import { formatDateString } from "@/lib/utils";
+import { formatDateString } from "@/utils/date";
 import { useLocale, useTranslations } from "@/i18n/compat/client";
 import { getCustomFieldDisplayText, getCustomFieldHref, shouldShowCustomFieldLabelPrefix } from "@/lib/customField";
 

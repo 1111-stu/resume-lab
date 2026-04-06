@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Braces } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PdfIcon } from "@/components/shared/icons/PdfIcon";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/cn";
 
 interface AnimatedImportButtonProps {
     onClick: () => void;

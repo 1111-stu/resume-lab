@@ -1,5 +1,5 @@
 import React from "react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/cn";
 import { useTranslations } from "@/i18n/compat/client";
 import {
   Popover,

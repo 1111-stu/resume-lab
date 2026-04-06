@@ -4,7 +4,8 @@ import SectionTitle from "./SectionTitle";
 import SectionWrapper from "../../shared/SectionWrapper";
 import { useLocale } from "@/i18n/compat/client";
 import { hasMeaningfulRichTextContent, normalizeRichTextContent } from "@/lib/richText";
-import { formatDateString, cn } from "@/lib/utils";
+import { cn } from "@/utils/cn";
+import { formatDateString } from "@/utils/date";
 
 interface EducationSectionProps {
     education?: Education[];

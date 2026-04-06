@@ -4,7 +4,7 @@ import Mark from "mark.js";
 import { useAIConfigStore } from "@/store/useAIConfigStore";
 import { AI_MODEL_CONFIGS } from "@/config/ai";
 import { apiUrl } from "../lib/api";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/cn";
 
 export interface GrammarError {
   context: string;

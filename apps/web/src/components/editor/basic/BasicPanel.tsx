@@ -9,7 +9,7 @@ import PhotoUpload from "@/components/shared/PhotoSelector";
 import IconSelector from "../IconSelector";
 import AlignSelector from "./AlignSelector";
 import Field from "../Field";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/cn";
 import { DEFAULT_FIELD_ORDER } from "@/config";
 import { useResumeStore } from "@/store/useResumeStore";
 import { BasicFieldType, CustomFieldType } from "@/types/resume";

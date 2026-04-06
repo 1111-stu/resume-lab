@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useLocale, useTranslations } from "@/i18n/compat/client";
 import { motion } from "framer-motion";
 import { useRouter } from "@/lib/navigation";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/cn";
 import { DEFAULT_TEMPLATES } from "@/config";
 import { useResumeStore } from "@/store/useResumeStore";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";

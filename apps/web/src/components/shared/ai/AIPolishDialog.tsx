@@ -21,7 +21,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useAIConfigStore } from "@/store/useAIConfigStore";
 import { AI_MODEL_CONFIGS } from "@/config/ai";
 import { apiUrl } from "@/lib/api";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/cn";
 
 interface AIPolishDialogProps {
   open: boolean;

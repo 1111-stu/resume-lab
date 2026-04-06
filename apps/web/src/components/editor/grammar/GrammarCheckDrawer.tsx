@@ -11,7 +11,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { Check, X, ArrowRight } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/cn";
 import { useEffect, useState } from "react";
 import Mark from "mark.js";
 import { toast } from "sonner";
