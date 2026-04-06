@@ -3,7 +3,7 @@ import { mkdir, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
 import { chromium } from "playwright";
-import { DEFAULT_TEMPLATES } from "../src/config";
+import { DEFAULT_TEMPLATES } from "../apps/web/src/config";
 import {
   TEMPLATE_PREVIEW_HEIGHT_PX,
   TEMPLATE_PREVIEW_LOCALES,
@@ -13,7 +13,7 @@ import {
   createEmptyTemplateSnapshotManifest,
   getTemplateSnapshotPath,
   type TemplatePreviewLocale,
-} from "../src/lib/templatePreview";
+} from "../apps/web/src/lib/templatePreview";
 
 const SNAPSHOT_SERVER_HOST = "127.0.0.1";
 const SNAPSHOT_SERVER_PORT = 4173;

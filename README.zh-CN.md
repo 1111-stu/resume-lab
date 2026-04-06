@@ -67,6 +67,34 @@ pnpm dev
 
 4. 打开浏览器访问 `http://localhost:3000`
 
+## 本地前后端分离开发
+
+如果你想让前端对接已经拆出的 Hono 后端：
+
+1. 基于 `apps/web/.env.example` 创建本地环境文件，并设置：
+
+```bash
+VITE_API_BASE_URL=http://localhost:3001
+```
+
+2. 启动后端：
+
+```bash
+pnpm dev:backend
+```
+
+3. 在另一个终端启动前端：
+
+```bash
+pnpm dev
+```
+
+当前迁移示范链路：
+
+- 语法检查是第一个接入独立后端的前端功能
+- 前端请求地址：`/v1/resume/grammar`
+- 后端默认地址：`http://localhost:3001`
+
 ## 📦 构建打包
 
 ```bash
