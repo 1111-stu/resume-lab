@@ -1,6 +1,6 @@
 
 import { useTranslations } from "@/i18n/compat/client";
-import Image from "@/lib/image";
+import Image from "@/components/ui/image";
 import { useState, useEffect, useRef, useCallback } from "react";
 import { ChevronRight, Sparkles, Shield, Zap } from "lucide-react";
 import AnimatedFeature from "./client/AnimatedFeature";

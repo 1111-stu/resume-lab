@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "@/lib/image";
+import Image from "@/components/ui/image";
 
 interface LogoProps {
   size?: number;
