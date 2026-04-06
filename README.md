@@ -1,18 +1,21 @@
 <div align="center">
 
-# ✨ Magic Resume ✨
+# ✨ ResumeLab ✨
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 ![TanStack Start](https://img.shields.io/badge/TanStack_Start-latest-black)
 ![Framer Motion](https://img.shields.io/badge/Framer_Motion-10.0-purple)
 
-<a href="https://trendshift.io/repositories/13077" target="_blank"><img src="https://trendshift.io/api/badge/repositories/13077" alt="Magic Resume | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
-
 [简体中文](./README.zh-CN.md) | English
 
 </div>
 
-Magic Resume is a modern online resume editor that makes creating professional resumes simple and enjoyable. Built with TanStack Start and Framer Motion, it supports real-time preview and custom themes.
+ResumeLab is a fork of [Magic Resume](https://github.com/JOYCEQL/magic-resume), a modern online resume editor that makes creating professional resumes simple and enjoyable. Built with TanStack Start and Framer Motion, it supports real-time preview and custom themes.
+
+## Fork Notice
+
+This project is forked from [Magic Resume](https://github.com/JOYCEQL/magic-resume).
+The original project's license and additional commercial restrictions in [LICENSE](LICENSE) continue to apply to the upstream codebase.
 
 ## 📸 Screenshots
 
@@ -47,8 +50,8 @@ Magic Resume is a modern online resume editor that makes creating professional r
 1. Clone the project
 
 ```bash
-git clone git@github.com:JOYCEQL/magic-resume.git
-cd magic-resume
+git clone git@github.com:1111-stu/resume-lab.git
+cd resume-lab
 ```
 
 2. Install dependencies
@@ -112,27 +115,13 @@ Please see the [LICENSE](LICENSE) file for detailed terms.
 
 ## 📈 Star History
 
-<a href="https://star-history.com/#JOYCEQL/magic-resume&Date">
+<a href="https://star-history.com/#1111-stu/resume-lab&Date">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=JOYCEQL/magic-resume&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=JOYCEQL/magic-resume&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=JOYCEQL/magic-resume&type=Date" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=1111-stu/resume-lab&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=1111-stu/resume-lab&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=1111-stu/resume-lab&type=Date" />
  </picture>
 </a>
-
-## 📞 Contact
-
-You can follow the latest updates via:
-
-- Author: Siyue
-- X: @GuangzhouY81070
-- Discord: Join our community https://discord.gg/9mWgZrW3VN
-- Email: 18806723365@163.com
-- WeChat Group: Scan to join our developer community
-
-  <img src="./images/wechat.jpg" width="200" alt="WeChat Group">
-
-- Project Homepage: https://github.com/JOYCEQL/magic-resume
 
 ## 🌟 Support
 
