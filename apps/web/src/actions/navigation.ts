@@ -1,6 +1,6 @@
 "use server";
 
-import { redirect } from "@/lib/navigation";
+import { redirect } from "@/router/navigation";
 
 export async function GoDashboardAction() {
   redirect("/app/dashboard");

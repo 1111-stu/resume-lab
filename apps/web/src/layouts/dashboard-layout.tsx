@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { IconResumes, IconTemplates, IconSettings, IconAI } from "@/components/shared/icons/SidebarIcons";
-import { usePathname, useRouter } from "@/lib/navigation";
+import { usePathname, useRouter } from "@/router/navigation";
 import {
   Sidebar,
   SidebarContent,

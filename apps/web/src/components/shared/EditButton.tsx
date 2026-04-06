@@ -1,5 +1,5 @@
 import { Button, ButtonProps } from "@/components/ui/button";
-import Link from "@/lib/link";
+import Link from "@/router/link";
 import { JSX, RefAttributes } from "react";
 
 const EditButton = (

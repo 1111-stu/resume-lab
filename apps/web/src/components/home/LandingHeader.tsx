@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { usePathname } from "@/lib/navigation";
+import { usePathname } from "@/router/navigation";
 import { useTranslations } from "@/i18n/compat/client";
 import { Menu, Moon, Sun, X } from "lucide-react";
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations, useLocale } from "@/i18n/compat/client";
-import { useRouter } from "@/lib/navigation";
+import { useRouter } from "@/router/navigation";
 import { Plus, Settings, AlertCircle } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";

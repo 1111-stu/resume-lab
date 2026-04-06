@@ -16,7 +16,7 @@ import {
 import { toast } from "sonner";
 import { motion } from "framer-motion";
 import { useTranslations } from "@/i18n/compat/client";
-import { useRouter } from "@/lib/navigation";
+import { useRouter } from "@/router/navigation";
 import { exportResumeToBrowserPrint } from "@/utils/print";
 import { exportToPdf } from "@/utils/export";
 import { Dock, DockIcon } from "@/components/magicui/dock";

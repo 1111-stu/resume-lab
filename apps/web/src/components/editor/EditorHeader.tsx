@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useTranslations } from "@/i18n/compat/client";
 import { AlertCircle, ShieldCheck, ShieldAlert } from "lucide-react";
 import { motion } from "framer-motion";
-import { useRouter } from "@/lib/navigation";
+import { useRouter } from "@/router/navigation";
 import { Input } from "@/components/ui/input";
 import PdfExport from "../shared/PdfExport";
 import ThemeToggle from "../shared/ThemeToggle";

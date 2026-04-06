@@ -1,7 +1,7 @@
 
 import { motion } from "framer-motion";
 import { useTranslations, useLocale } from "@/i18n/compat/client";
-import Link from "@/lib/link";
+import Link from "@/router/link";
 import { Sun, Moon, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ThemeToggle from "@/components/shared/ThemeToggle";

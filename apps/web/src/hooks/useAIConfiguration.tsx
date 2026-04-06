@@ -1,4 +1,4 @@
-import { useRouter } from "@/lib/navigation";
+import { useRouter } from "@/router/navigation";
 import { useTranslations } from "@/i18n/compat/client";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
