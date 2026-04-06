@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import SectionTitle from "./SectionTitle";
 import SectionWrapper from "../../shared/SectionWrapper";
 import { GlobalSettings } from "@/types/resume";
-import { normalizeRichTextContent } from "@/lib/richText";
+import { normalizeRichTextContent } from "@/features/resume/rich-text";
 
 interface SelfEvaluationSectionProps {
     content?: string;

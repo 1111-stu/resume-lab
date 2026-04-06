@@ -20,7 +20,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useAIConfigStore } from "@/store/useAIConfigStore";
 import { AI_MODEL_CONFIGS } from "@/config/ai";
-import { apiUrl } from "@/lib/api";
+import { apiUrl } from "@/api/client";
 import { cn } from "@/utils/cn";
 
 interface AIPolishDialogProps {

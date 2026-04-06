@@ -14,7 +14,7 @@ import enMessages from "@/i18n/locales/en.json";
 import { Providers } from "@/providers/app-providers";
 import { Toaster } from "@/components/ui/sonner";
 import { getPreferredLocale } from "@/i18n/runtime";
-import { getPublicRuntimeConfigScript } from "@/lib/runtime-config";
+import { getPublicRuntimeConfigScript } from "@/runtime/public-config";
 
 export const Route = createRootRoute({
   head: () => ({

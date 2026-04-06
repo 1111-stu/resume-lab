@@ -3,11 +3,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import SectionTitle from "./SectionTitle";
 import SectionWrapper from "../../shared/SectionWrapper";
 import { Project, GlobalSettings } from "@/types/resume";
-import { normalizeRichTextContent } from "@/lib/richText";
+import { normalizeRichTextContent } from "@/features/resume/rich-text";
 import { cn } from "@/utils/cn";
 import { formatDateString } from "@/utils/date";
 import { useLocale } from "@/i18n/compat/client";
-import { getProjectLinkMeta } from "@/lib/projectLink";
+import { getProjectLinkMeta } from "@/features/resume/project-link";
 
 interface ProjectSectionProps {
     projects: Project[];

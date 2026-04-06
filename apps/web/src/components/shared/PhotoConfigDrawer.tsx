@@ -23,7 +23,7 @@ import {
 } from "@/types/resume";
 import { Textarea } from "@/components/ui/textarea";
 import { useResumeStore } from "@/store/useResumeStore";
-import { apiUrl } from "@/lib/api";
+import { apiUrl } from "@/api/client";
 import { cn } from "@/utils/cn";
 
 const DEFAULT_AVATAR = "/avatar.png";

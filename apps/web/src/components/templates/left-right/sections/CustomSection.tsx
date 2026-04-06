@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import SectionTitle from "./SectionTitle";
 import SectionWrapper from "../../shared/SectionWrapper";
 import { GlobalSettings, CustomItem } from "@/types/resume";
-import { normalizeRichTextContent } from "@/lib/richText";
+import { normalizeRichTextContent } from "@/features/resume/rich-text";
 import { formatDateString } from "@/utils/date";
 import { useLocale } from "@/i18n/compat/client";
 

@@ -1,5 +1,5 @@
 import { CustomFieldType } from "@/types/resume";
-import { getProjectLinkHref } from "@/lib/projectLink";
+import { getProjectLinkHref } from "@/features/resume/project-link";
 
 const trim = (value?: string) => value?.trim() || "";
 

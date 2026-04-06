@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import { ReactNode } from "react";
-import { getPublicRuntimeConfigScript } from "@/lib/runtime-config";
+import { getPublicRuntimeConfigScript } from "@/runtime/public-config";
 
 const inter = Inter({
   subsets: ["latin"],

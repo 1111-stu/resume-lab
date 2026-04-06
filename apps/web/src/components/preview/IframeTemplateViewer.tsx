@@ -11,7 +11,7 @@ import {
   createTemplatePreviewData,
   getTemplateById,
   isTemplatePreviewLocale,
-} from "@/lib/templatePreview";
+} from "@/features/templates/preview";
 
 const IframeTemplateViewer = () => {
   const { id } = useParams({ from: "/app/preview-template/$id" });
