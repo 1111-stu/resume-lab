@@ -1,5 +1,5 @@
 import { createFileRoute, Outlet } from "@tanstack/react-router";
-import DashboardLayout from "@/app/app/dashboard/client";
+import DashboardLayout from "@/layouts/dashboard-layout";
 
 export const Route = createFileRoute("/app/dashboard")({
   head: () => ({

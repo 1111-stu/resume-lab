@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect } from "react";
-import WorkbenchPage from "@/app/app/workbench/[id]/page";
+import WorkbenchPage from "@/pages/workbench/[id]/page";
 import { useResumeStore } from "@/store/useResumeStore";
 
 export const Route = createFileRoute("/app/workbench/$id")({
