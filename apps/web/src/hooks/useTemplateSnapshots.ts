@@ -4,7 +4,7 @@ import { TEMPLATE_SNAPSHOT_MANIFEST } from "@/generated/templateSnapshotManifest
 import {
   getTemplateSnapshotSrc,
   isTemplatePreviewLocale,
-} from "@/features/templates/preview";
+} from "@/lib/templates/preview";
 
 export const useTemplateSnapshots = (locale: string | null | undefined) => {
   const resolvedLocale = isTemplatePreviewLocale(locale) ? locale : "zh";

@@ -40,7 +40,7 @@ import {
   normalizeLinkHref,
   stripLegacyRichTextClasses,
   stripTrailingListParagraph,
-} from "@/features/resume/rich-text";
+} from "@/lib/resume/rich-text";
 import { BetterSpace } from "./BetterSpace";
 import { toast } from "sonner";
 import "@/styles/tiptap.scss";

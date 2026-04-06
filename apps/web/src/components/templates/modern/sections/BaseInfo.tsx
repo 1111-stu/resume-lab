@@ -7,7 +7,7 @@ import { BasicInfo, getBorderRadiusValue, GlobalSettings } from "@/types/resume"
 import { ResumeTemplate } from "@/types/template";
 import SectionWrapper from "../../shared/SectionWrapper";
 import { useTranslations, useLocale } from "@/i18n/compat/client";
-import { getCustomFieldDisplayText, getCustomFieldHref, shouldShowCustomFieldLabelPrefix } from "@/features/resume/custom-field";
+import { getCustomFieldDisplayText, getCustomFieldHref, shouldShowCustomFieldLabelPrefix } from "@/lib/resume/custom-field";
 
 interface BaseInfoProps {
     basic: BasicInfo | undefined;

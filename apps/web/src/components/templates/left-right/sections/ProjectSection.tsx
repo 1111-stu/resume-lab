@@ -3,10 +3,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import SectionTitle from "./SectionTitle";
 import SectionWrapper from "../../shared/SectionWrapper";
 import { Project, GlobalSettings } from "@/types/resume";
-import { normalizeRichTextContent } from "@/features/resume/rich-text";
+import { normalizeRichTextContent } from "@/lib/resume/rich-text";
 import { formatDateString } from "@/utils/date";
 import { useLocale } from "@/i18n/compat/client";
-import { getProjectLinkMeta } from "@/features/resume/project-link";
+import { getProjectLinkMeta } from "@/lib/resume/project-link";
 
 interface ProjectSectionProps {
     projects: Project[];

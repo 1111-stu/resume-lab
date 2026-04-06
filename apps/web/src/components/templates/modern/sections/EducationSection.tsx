@@ -3,7 +3,7 @@ import { Education, GlobalSettings } from "@/types/resume";
 import SectionTitle from "./SectionTitle";
 import SectionWrapper from "../../shared/SectionWrapper";
 import { useLocale } from "@/i18n/compat/client";
-import { hasMeaningfulRichTextContent, normalizeRichTextContent } from "@/features/resume/rich-text";
+import { hasMeaningfulRichTextContent, normalizeRichTextContent } from "@/lib/resume/rich-text";
 import { cn } from "@/utils/cn";
 import { formatDateString } from "@/utils/date";
 

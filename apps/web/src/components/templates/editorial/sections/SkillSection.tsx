@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import SectionTitle from "./SectionTitle";
 import SectionWrapper from "../../shared/SectionWrapper";
 import { GlobalSettings } from "@/types/resume";
-import { normalizeRichTextContent } from "@/features/resume/rich-text";
+import { normalizeRichTextContent } from "@/lib/resume/rich-text";
 
 interface SkillSectionProps {
   skill?: string;
