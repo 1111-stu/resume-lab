@@ -7,7 +7,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "start": "node server.mjs",
-    "generate:template-snapshots": "tsx ../../scripts/generate-template-snapshots.ts",
+    "generate:template-snapshots": "tsx scripts/generate-template-snapshots.ts",
     "install:playwright": "playwright install chromium"
   },
   "dependencies": {
