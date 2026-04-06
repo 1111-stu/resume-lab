@@ -3,7 +3,7 @@ import { toast } from "sonner";
 import Mark from "mark.js";
 import { useAIConfigStore } from "@/store/useAIConfigStore";
 import { AI_MODEL_CONFIGS } from "@/config/ai";
-import { apiUrl } from "../lib/api";
+import { apiUrl } from "@/api/client";
 import { cn } from "@/utils/cn";
 
 export interface GrammarError {
