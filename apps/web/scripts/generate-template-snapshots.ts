@@ -13,7 +13,7 @@ import {
   createEmptyTemplateSnapshotManifest,
   getTemplateSnapshotPath,
   type TemplatePreviewLocale,
-} from "@/features/templates/preview";
+} from "@/lib/templates/preview";
 
 const SNAPSHOT_SERVER_HOST = "127.0.0.1";
 const SNAPSHOT_SERVER_PORT = 4173;
