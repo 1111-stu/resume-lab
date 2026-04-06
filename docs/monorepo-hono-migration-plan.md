@@ -239,7 +239,7 @@ Add a centralized client:
 
 ```ts
 export const API_BASE_URL =
-  import.meta.env.VITE_API_BASE_URL || "http://localhost:3001";
+  import.meta.env.VITE_API_BASE_URL || "http://localhost:3000";
 
 export const apiUrl = (path: string) => `${API_BASE_URL}${path}`;
 ```
@@ -293,7 +293,7 @@ Suggested `apps/backend/package.json`:
 import { serve } from "@hono/node-server";
 import { app } from "./app";
 
-const port = Number(process.env.PORT || 3001);
+const port = Number(process.env.PORT || 3000);
 
 serve({
   fetch: app.fetch,
@@ -319,7 +319,7 @@ export const app = new Hono();
 app.use(
   "*",
   cors({
-    origin: process.env.CORS_ORIGIN || "http://localhost:3000",
+    origin: process.env.CORS_ORIGIN || "http://localhost:5137",
     allowHeaders: ["Content-Type", "Authorization"],
     allowMethods: ["GET", "POST", "OPTIONS"],
   }),
@@ -384,14 +384,14 @@ Suggested `packages/shared/package.json`:
 ### `apps/web/.env`
 
 ```env
-VITE_API_BASE_URL=http://localhost:3001
+VITE_API_BASE_URL=http://localhost:3000
 ```
 
 ### `apps/backend/.env`
 
 ```env
-PORT=3001
-CORS_ORIGIN=http://localhost:3000
+PORT=3000
+CORS_ORIGIN=http://localhost:5137
 HTTP_PROXY=
 HTTPS_PROXY=
 ```

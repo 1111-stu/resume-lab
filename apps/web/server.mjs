@@ -7,7 +7,7 @@ import serverEntry from "./dist/server/server.js";
 
 const currentDir = dirname(fileURLToPath(import.meta.url));
 const clientDir = resolve(currentDir, "dist/client");
-const port = Number(process.env.PORT || 3000);
+const port = Number(process.env.PORT || 5137);
 const host = process.env.HOSTNAME || "0.0.0.0";
 
 const MIME_TYPES = {

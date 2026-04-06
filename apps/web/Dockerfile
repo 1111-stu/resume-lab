@@ -36,8 +36,8 @@ COPY --from=builder /app/apps/web/dist ./dist
 
 USER nodeapp
 
-EXPOSE 3000
-ENV PORT=3000
+EXPOSE 5137
+ENV PORT=5137
 ENV HOSTNAME=0.0.0.0
 ENV FONTCONFIG_PATH=/var/task/fonts
 

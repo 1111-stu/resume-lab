@@ -36,8 +36,8 @@ COPY --from=builder /app/packages/shared /app/packages/shared
 
 USER nodeapp
 
-EXPOSE 3001
-ENV PORT=3001
-ENV CORS_ORIGIN=http://localhost:3000
+EXPOSE 3000
+ENV PORT=3000
+ENV CORS_ORIGIN=http://localhost:5137
 
 CMD ["node", "dist/index.js"]

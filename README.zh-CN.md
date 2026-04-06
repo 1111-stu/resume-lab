@@ -65,7 +65,7 @@ pnpm install
 pnpm dev
 ```
 
-4. 打开浏览器访问 `http://localhost:3000`
+4. 打开浏览器访问 `http://localhost:5137`
 
 ## 本地前后端分离开发
 
@@ -74,7 +74,7 @@ pnpm dev
 1. 基于 `apps/web/.env.example` 创建本地环境文件，并设置：
 
 ```bash
-VITE_API_BASE_URL=http://localhost:3001
+VITE_API_BASE_URL=http://localhost:3000
 ```
 
 2. 启动后端：
@@ -93,7 +93,7 @@ pnpm dev
 
 - 语法检查是第一个接入独立后端的前端功能
 - 前端请求地址：`/v1/resume/grammar`
-- 后端默认地址：`http://localhost:3001`
+- 后端默认地址：`http://localhost:3000`
 
 ## 📦 构建打包
 

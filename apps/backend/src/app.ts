@@ -10,7 +10,7 @@ import { sharedCheckRoute } from "./routes/shared-check.js";
 export const app = new Hono();
 
 const corsMiddleware = cors({
-  origin: process.env.CORS_ORIGIN || "http://localhost:3000",
+  origin: process.env.CORS_ORIGIN || "http://localhost:5137",
   allowHeaders: ["Content-Type", "Authorization"],
   allowMethods: ["GET", "POST", "OPTIONS"],
 });

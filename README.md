@@ -66,7 +66,7 @@ pnpm install
 pnpm dev
 ```
 
-4. Open browser and visit `http://localhost:3000`
+4. Open browser and visit `http://localhost:5137`
 
 ## Local Split Dev
 
@@ -75,7 +75,7 @@ To run the frontend against the extracted Hono backend:
 1. Create a local env file from `apps/web/.env.example` and set:
 
 ```bash
-VITE_API_BASE_URL=http://localhost:3001
+VITE_API_BASE_URL=http://localhost:3000
 ```
 
 2. Start the backend:
@@ -94,7 +94,7 @@ Current migration demo:
 
 - Grammar check is the first frontend feature wired to the standalone backend.
 - Frontend request target: `/v1/resume/grammar`
-- Backend service default address: `http://localhost:3001`
+- Backend service default address: `http://localhost:3000`
 
 ## 📦 Build and Deploy
 
