@@ -107,24 +107,6 @@ pnpm dev:web
 pnpm dev:backend
 ```
 
-构建前端：
-
-```bash
-pnpm build:web
-```
-
-构建后端：
-
-```bash
-pnpm build:backend
-```
-
-兼容命令：
-
-```bash
-pnpm build
-```
-
 当前这个命令只会构建前端。
 
 ## 环境变量

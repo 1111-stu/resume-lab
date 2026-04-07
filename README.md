@@ -107,24 +107,6 @@ Run backend only:
 pnpm dev:backend
 ```
 
-Build frontend:
-
-```bash
-pnpm build:web
-```
-
-Build backend:
-
-```bash
-pnpm build:backend
-```
-
-Compatibility command:
-
-```bash
-pnpm build
-```
-
 This currently builds the frontend only.
 
 ## Environment Variables
